@@ -1,0 +1,8 @@
+extends layout
+
+block main
+    h1.display-4.text-center.my-4 Edit Notes
+    .main-content
+        form(action=`/editMyNotes/${note.id}`, method="post")
+            input(class="form-control" type="text" name="text", value=note.text)
+            button(class="btn btn-primary btn-lg btn-block my-4" type="submit" ) Save 

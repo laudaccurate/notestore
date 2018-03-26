@@ -1,0 +1,18 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand(href="/") Note-Store
+  button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+    span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav
+      if user
+        li.nav-item
+          a.nav-link(href="/profile") Profile
+        li.nav-item
+          a.nav-link(href="/myNotes") Notes
+        li.nav-item
+          a.nav-link(href="/logout") Log Out
+      else
+        li.nav-item
+          a.nav-link(href="/register") Register
+        li.nav-item
+          a.nav-link(href="/login") Login

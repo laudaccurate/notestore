@@ -1,0 +1,16 @@
+extends layout
+
+block main
+    h1.display-4.text-center.my-4 Create New Account
+    .main-content
+        form(action="/register" method="POST")
+            .form-group
+                label(for="username") Name
+                input(class="form-control" type="text" placholder="Username" name="username")
+            .form-group
+                label(for="password") Password
+                input(class="form-control" type="password" placholder="Password" name="password")
+            .form-group
+                label(for="password") Confirm Password
+                input(class="form-control" type="password" placholder="Confirm Password" name="confirmPassword")
+            button(class="btn btn-primary btn-lg btn-block" type="submit") Register

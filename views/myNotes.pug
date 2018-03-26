@@ -1,0 +1,17 @@
+extends layout
+
+block main
+    h1.display-4.text-center.my-4 My Notes
+    .main-content
+        form(action="/myNotes", method="post")
+            .form-group
+                label(for="text") New Note:
+                input(class="form-control" name="text", type="text")
+                button(class="btn btn-primary btn-lg btn-block my-4" type="submit" ) Save
+        
+        ul.list-group
+            each note in notes
+                li.list-group-item
+                    p #{note.text} ------------------------ #{note.createdAt.toLocaleString()}
+                    a(class="btn btn-primary mx-4" href=`/editMyNotes/${note._id}`) Edit Note
+                    a(class="btn btn-primary mx-4" href=`/deleteMyNotes/${note._id}`) Delete Note
